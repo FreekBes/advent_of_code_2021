@@ -42,6 +42,10 @@ function runPuzzle(puzzlePath) {
 
 askQuestion("Which day to run? ").then(function(answer) {
 	const day = parseInt(answer);
+	if (isNaN(day)) {
+		console.warn("Invalid input!");
+		exit();
+	}
 	if (day < 1) {
 		console.warn("Invalid day! Day must be at least 1.");
 		exit();
@@ -53,11 +57,15 @@ askQuestion("Which day to run? ").then(function(answer) {
 		if (folders.length > 1) {
 			askQuestion("Which puzzle to run? ").then(function(answer2) {
 				const puzzle = parseInt(answer2);
+				if (isNaN(puzzle)) {
+					console.warn("Invalid input!");
+					exit();
+				}
 				if (puzzle != 1 && puzzle != 2) {
 					console.warn("Invalid input! Puzzle can be either 1 or 2.");
 					exit();
 				}
-				if (folders.indexOf(puzzle) > -1) {
+				if (folders.indexOf("puzzle" + puzzle) > -1) {
 					runPuzzle(path.join(dayPath, "puzzle" + puzzle));
 					exit(0);
 				}
