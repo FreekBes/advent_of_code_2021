@@ -19,7 +19,6 @@ const lineCount = lines.length;
 
 function bitsToInt(bits) {
 	bits = bits.trim();
-	let temp = NaN;
 	let num = 0;
 	let left = bits.length - 1;
 	let i = 0;
