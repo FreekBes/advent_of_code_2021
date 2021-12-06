@@ -17,7 +17,7 @@ const input = fs.readFileSync(path.join(__dirname, "..", "input.txt"));
 const initPopu = input.toString().split(",");
 let day, i;
 const simulateDays = 256;
-let fishies = new BigUint64Array(10);
+let fishies = new BigUint64Array(9);
 let tempFishies = new BigUint64Array(9);
 let popuSize = BigInt(0);
 
